@@ -13,4 +13,4 @@ DATABASES = {
     }
 }
 
-SECRET_KEY = env('DJANGO_SECRET_KEY')
+SECRET_KEY = 'w2p!z93l004jbhl_$-k0_q^znvqo3acvkbffth+!ah)96xd@h4'
