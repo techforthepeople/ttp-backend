@@ -12,6 +12,19 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
+#For env in allowed hosts to get Render.com working:
+import environ
+
+ROOT_DIR = environ.Path(__file__) - 3  # (django_quick_start/config/settings/base.py - 3 = django_quick_start/)
+APPS_DIR = ROOT_DIR.path('django_quick_start')
+
+env = environ.Env()
+
+READ_DOT_ENV_FILE = env.bool('DJANGO_READ_DOT_ENV_FILE', default=False)
+if READ_DOT_ENV_FILE:
+    # OS environment variables take precedence over variables from .env
+    env.read_env(str(ROOT_DIR.path('.env')))
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -25,12 +38,11 @@ SECRET_KEY = 'w2p!z93l004jbhl_$-k0_q^znvqo3acvkbffth+!ah)96xd@h4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
 INSTALLED_APPS = [
+    'navi_api.apps.NaviApiConfig',
     'rest_framework',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -44,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -126,7 +138,6 @@ USE_L10N = True
 USE_TZ = True
 
 
-ALLOWED_HOSTS = ['127.0.0.1', '.ibmcloud.com']
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
