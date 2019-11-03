@@ -42,6 +42,7 @@ DEBUG = True
 # Application definition
 
 INSTALLED_APPS = [
+    'navi',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
