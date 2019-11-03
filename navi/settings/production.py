@@ -5,10 +5,10 @@ DEBUG = False
 DATABASES = {
     'default': {
                 'ENGINE': 'django.db.backends.postgresql',
-                'NAME': 'navi_8g8p',
+                'NAME': 'navi',
                 'USER': 'navi',
-                'PASSWORD': 'r3YLQi5DCfGP2Hy6yvZaK6srbdNRCkNq',
-                'HOST': 'dpg-bmv1qv7d1hnnvsqk6shg',
+                'PASSWORD': 'Vsdo7MUtZVohBx6dximgN5NdXUisGt6n',
+                'HOST': 'dpg-bmv0tsvd1hnnvsqk69o0',
                 'PORT': '5432',
     }
 }
