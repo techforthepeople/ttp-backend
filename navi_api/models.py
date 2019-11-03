@@ -22,7 +22,7 @@ class EmtLevel(models.Model):
 class EmtProfile(models.Model):
     user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
     organization = models.CharField(max_length = 225)
-    dob = models.DateTimeField()
+    dob = models.DateTimeField(null=True, blank=True)
     level = models.ForeignKey(EmtLevel, null=True, blank=True, on_delete=models.SET_NULL)
     created = models.DateTimeField(editable=False)
     modified = models.DateTimeField()
@@ -41,8 +41,8 @@ class EmtProfile(models.Model):
 
 class StatusLog(models.Model):
     user = models.ForeignKey(User, null=True, blank=True, on_delete=models.SET_NULL)
-    longitude = models.DecimalField(max_digits=9, decimal_places=6)
-    latitude = models.DecimalField(max_digits=9, decimal_places=6)
+    longitude = models.DecimalField(null=True, blank=True, max_digits=20, decimal_places=8)
+    latitude = models.DecimalField(null=True, blank=True,max_digits=20, decimal_places=8)
     heart_rate = models.IntegerField(blank=True, null=True)
     #humidity is a percentage. 
     humidity = models.DecimalField(max_digits=9, blank=True, null=True, decimal_places=6)
@@ -50,7 +50,7 @@ class StatusLog(models.Model):
     temperature = models.DecimalField(max_digits=9, blank=True, null=True, decimal_places=6)
     #Pressure is mBar
     pressure = models.DecimalField(max_digits=9, blank=True, null=True, decimal_places=6)
-    gas = models.IntegerField()
+    gas = models.IntegerField(null=True, blank=True)
     created = models.DateTimeField(editable=False)
     modified = models.DateTimeField()
 
