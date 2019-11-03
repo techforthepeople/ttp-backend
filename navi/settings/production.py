@@ -1,6 +1,6 @@
 from navi.settings.base import *
 
-DEBUG = False
+DEBUG = True
 
 DATABASES = {
     'default': {
@@ -13,3 +13,4 @@ DATABASES = {
     }
 }
 
+ALLOWED_HOSTS = ['*']
