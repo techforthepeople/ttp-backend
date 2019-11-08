@@ -1,4 +1,4 @@
-#  Solidarity - Back-End
+#  NAVI (Solidarity) - Back-End
 
 Winning soultion for IBM's TechToProtect Challenege! Built in conjunction with Web Application, Iot Device, and Mobile Application. Click here for information https://github.com/techforthepeople
 
